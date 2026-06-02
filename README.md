@@ -21,6 +21,37 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## API-only repository
+
+This repository has been migrated to an API-only Laravel application. Frontend build tooling and example views have been removed.
+
+Quick setup (development):
+
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate --force
+php artisan migrate
+php artisan serve
+```
+
+Run tests:
+
+```bash
+composer test
+```
+
+CI: A GitHub Actions workflow runs `composer install`, generates an `APP_KEY`, and runs the test suite on push and pull requests.
+
+A projekt most API-only, de van egy külön React admin alkalmazás is az `admin/` mappában, ami Vite-tal fut.
+
+- Belépés:
+    - `cd admin`
+    - `npm install`
+    - `npm run dev`
+
+Ha szeretnéd, folytathatom az admin felület fejlesztését React + Vite kombinációval.
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
